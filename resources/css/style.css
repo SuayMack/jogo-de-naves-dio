@@ -1,0 +1,184 @@
+@font-face {
+    font-family: Titulo;
+    src: url(/resources/fontes/ANODETONOONE.TTF)
+}
+ h1 {
+    font-family: Titulo;
+    font-size: 40px;
+    color: #603a03;
+}
+
+ body {
+    background-image: url(/resources/img/fundobody.png);
+}
+
+#container {
+    width: 950px;
+    height: auto;
+    position: relative;
+    margin: 0 auto;
+}
+
+#fundoGame {
+    width: 950px;
+    height: 630px;
+    background-image: url(/resources/img/fundobody.png);
+    border-color: #fff;
+    border-style: solid;
+    background-position: bottom;
+
+}
+
+#jogador {
+    width: 256px;
+    height: 66px;
+    position: absolute;
+    left: 2rem;
+    top: 20rem;
+    background-image: url(/resources/img/jogador.png);
+    background-repeat: no-repeat;
+}
+
+#inimigo1 {
+    width: 256px;
+    height: 66px;
+    position: absolute;
+    left: 689px;
+    top: 19rem;
+    background-image: url(/resources/img/inimigo1.png);
+    background-repeat: no-repeat;
+}
+
+#inimigo2 {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    right: 2rem;
+    top: 34rem;
+    background-image: url(/resources/img/inimigo2.png);
+    background-repeat: no-repeat;
+}
+
+#amigo {
+    width: 41px;
+    height: 80px;
+    position: absolute;
+    left: 2rem;
+    top: 34rem;
+    background-image: url(/resources/img/amigo.png);
+    background-repeat: no-repeat;
+}
+
+#inicio {
+    width: 350px;
+    height: 200px;
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    text-align: center;
+    padding: 10px;
+}
+
+.anima1 {
+    background-image: url(..img/jogador.png);
+    animation: play .5s steps(3) infinite;    
+    -webkit-animation: play .5s steps(3) infinite;
+    -moz-animation: play .5s steps(3) infinite;
+    -ms-animation: play .5s steps(3) infinite;
+    -o-animation: play .5s steps(3) infinite;
+}
+
+.anima2 {
+    background-image: url(..img/inimigo1.png);
+    animation: play .5s steps(3) infinite;    
+    -webkit-animation: play .5s steps(3) infinite;
+    -moz-animation: play .5s steps(3) infinite;
+    -ms-animation: play .5s steps(3) infinite;
+    -o-animation: play .5s steps(3) infinite;
+}
+
+@keyframes play {
+    from {background-position:0px;}
+    to {background-position: -768px;}
+}
+
+@-webkit-keyframes play {
+    from {background-position:0px;}
+    to {background-position: -768px;}
+}
+@-moz-keyframes play {
+    from {background-position:0px;}
+    to {background-position: -768px;}
+}
+@-ms-keyframes play {
+    from {background-position:0px;}
+    to {background-position: -768px;}
+}
+@-o-keyframes play {
+    from {background-position:0px;}
+    to {background-position: -768px;}
+}
+
+.anima3 {
+    background-image: url(/resources/img/amigo.png);
+    animation: play2 .9s steps(4)   infinite;
+    -webkit-animation: play2 .9s steps(4)   infinite;
+    -moz-animation: play2 .9s steps(4)   infinite;
+    -ms-animation: play2 .9s steps(4)   infinite;
+    -o-animation: play2 .9s steps(4)   infinite;
+}
+
+@keyframes play2 {
+    from {background-position:0px;}
+    to {background-position: -164px;}
+}
+
+@-webkit-keyframes play2 {
+    from {background-position:0px;}
+    to {background-position: -164px;}
+}
+@-moz-keyframes play2 {
+    from {background-position:0px;}
+    to {background-position: -164px;}
+}
+@-ms-keyframes play2 {
+    from {background-position:0px;}
+    to {background-position: -164px;}
+}
+@-o-keyframes play2 {
+    from {background-position:0px;}
+    to {background-position: -164px;}
+}
+
+.anima4 {
+    background-image: url(/resources/img/inimigo2.png);
+    animation: play3 .9s steps(4)   infinite;
+    -webkit-animation: play3 .9s steps(4)   infinite;
+    -moz-animation: play3 .9s steps(4)   infinite;
+    -ms-animation: play3 .9s steps(4)   infinite;
+    -o-animation: play3 .9s steps(4)   infinite;
+}
+
+@keyframes play3 {
+    from {background-position:0;}
+    to {background-position: -320px;}
+}
+
+@-webkit-keyframes play3 {
+    from {background-position:0;}
+    to {background-position: -320px;}
+}
+@-moz-keyframes play3 {
+    from {background-position:0;}
+    to {background-position: -320px;}
+}
+@-ms-keyframes play3 {
+    from {background-position:0;}
+    to {background-position: -320px;}
+}
+@-o-keyframes play3 {
+    from {background-position:0;}
+    to {background-position: -320px;}
+}
+
