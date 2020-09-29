@@ -163,6 +163,18 @@ function start() {
         var colisao4 = ($("#disparo").collision($("#inimigo2")))
         var colisao5 = ($("#jogador").collision($("#amigo")))
         var colisao6 = ($("#inimigo2").collision($("#amigo")))
+        
+        var somDisparo = document.getElementById("somDisparo")
+        var somExplosao = document.getElementById("somExplosao")
+        var musica = document.getElementById("musica")
+        var somGameover = document.getElementById("somGameover")
+        var somPerdido = document.getElementById("somPerdido")
+        var somResgate = document.getElementById("somResgate")
+
+        //Música em loop
+        //ended = fim da musica
+        musica.addEventListener("ended", function () { musica.currentTime = 0; musica.play(); }, false)
+        musica.play()
 
         //Se houver colisao do jogador com o inimigo1
         if(colisao1.length > 0) {
@@ -198,6 +210,7 @@ function start() {
 
         //Se houver disparo do jogador com o inimigo1
         if(colisao3.length > 0) {
+            velocidade = velocidade + 0.3
             pontos = pontos + 100
             //Capturo a posição atual do inimigo1
             inimigo1X = parseInt($("#inimigo1").css("left"))
@@ -340,16 +353,16 @@ function start() {
     function energia() {
         if (energiaAtual == 3) {
             //Será exibido na div energia um background-image que estpa na url...
-            $("#energia").css("background-image", "url(img/energia3.png)")
+            $("#energia").css("background-image", "url(/resources/img/energia3.png)")
         }
         if (energiaAtual == 2) {
-            $("#energia").css("background-image", "url(img/energia2.png)")
+            $("#energia").css("background-image", "url(/resources/img/energia2.png)")
         }
         if (energiaAtual == 1) {
-            $("#energia").css("background-image", "url(img/energia1.png)")
+            $("#energia").css("background-image", "url(/resources/img/energia1.png)")
         }
         if (energiaAtual == 0) {
-            $("#energia").css("background-image", "url(img/energia0.png)")
+            $("#energia").css("background-image", "url(/resources/img/energia0.png)")
             //Game Over
         }
     }
