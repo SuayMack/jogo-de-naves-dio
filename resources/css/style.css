@@ -182,3 +182,75 @@
     to {background-position: -320px;}
 }
 
+/* Disparo jogador*/
+#disparo {
+    width: 50px;
+    height: 8px;
+    position: absolute;
+    background-image: url(/resources/img/disparo.png);
+}
+
+#explosao1 {
+    width: 15px;
+    height: 87px;
+    position: absolute;
+}
+
+#explosao2 {
+    width: 15px;
+    height: 87px;
+    position: absolute;
+}
+
+#explosao3 {
+    width: 44px;
+    height: 51px;
+    position: absolute;
+}
+
+.anima5 {
+    width: 44px;
+    height: 51px;
+    background-image: url(/resources/img/explosaoAmigo.png);
+    animation: play4 .5s steps(8)   infinite;
+    -webkit-animation: play4 .5s steps(8)   infinite;
+    -moz-animation: play4 .5s steps(8)   infinite;
+    -ms-animation: play4 .5s steps(8)   infinite;
+    -o-animation: play4 .5s steps(8)   infinite;
+}
+
+@keyframes play4 {
+    from {background-position:0;}
+    to {background-position: -345px;}
+}
+
+@-webkit-keyframes play4 {
+    from {background-position:0;}
+    to {background-position: -345px;}
+}
+@-moz-keyframes play4 {
+    from {background-position:0;}
+    to {background-position: -345px;}
+}
+@-ms-keyframes play4 {
+    from {background-position:0;}
+    to {background-position: -345px;}
+}
+@-o-keyframes play4 {
+    from {background-position:0;}
+    to {background-position: -345px;}
+}
+
+#placar {
+    width: 450px;
+    height: 50px;
+    position: absolute;
+    left: 5px;
+    top: 590px;
+}
+
+h2 {
+    font-family: Titulo;
+    font-size: 20px;
+    color: #FFF;
+}
