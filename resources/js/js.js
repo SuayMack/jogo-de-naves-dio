@@ -8,6 +8,8 @@ function start() {
     $("#fundoGame").append("<div id='inimigo2' class='anima4'></div>")
     $("#fundoGame").append("<div id='amigo' class='anima3'></div>")
     $("#fundoGame").append("<div id='placar'></div>")
+    $("#fundoGame").append("<div id='energia'></div>")
+
 
 
     //Principais variáveis do jogo
@@ -26,11 +28,8 @@ function start() {
     var pontos = 0
     var salvos = 0 
     var perdidos = 0
-
+    var energiaAtual = 3
     
-    
-    
-
     //Define se o jogador pressionou ou não alguma tecla
     jogo.pressionou = []
     //Verifica se o usuário pressionou alguma tecla
@@ -55,6 +54,7 @@ function start() {
         moveamigo()
         colisao()
         placar()
+        energia()
     }// Fim função loop
     //Função que movimenta o fundo do jogo
     function movefundo() {
@@ -166,6 +166,7 @@ function start() {
 
         //Se houver colisao do jogador com o inimigo1
         if(colisao1.length > 0) {
+            energiaAtual--
             //Capturo a posição atual do inimigo1
             inimigo1X = parseInt($("#inimigo1").css("left"))
             inimigo1Y = parseInt($("#inimigo1").css("top"))
@@ -181,6 +182,7 @@ function start() {
         
         //Se houver colisao do jogador com o inimigo2
         if(colisao2.length > 0) {
+            energiaAtual--
             //Capturo a posição atual do inimigo2
             inimigo2X = parseInt($("#inimigo2").css("left"))
             inimigo2Y = parseInt($("#inimigo2").css("top"))
@@ -334,5 +336,22 @@ function start() {
     function placar() {
         $("#placar").html("<h2> Pontos: " + pontos + " Salvos: " + salvos + " Perdidos: " + perdidos + "</h2>")
     }//Fim da função placar
+
+    function energia() {
+        if (energiaAtual == 3) {
+            //Será exibido na div energia um background-image que estpa na url...
+            $("#energia").css("background-image", "url(img/energia3.png)")
+        }
+        if (energiaAtual == 2) {
+            $("#energia").css("background-image", "url(img/energia2.png)")
+        }
+        if (energiaAtual == 1) {
+            $("#energia").css("background-image", "url(img/energia1.png)")
+        }
+        if (energiaAtual == 0) {
+            $("#energia").css("background-image", "url(img/energia0.png)")
+            //Game Over
+        }
+    }
 
 }//Fim da função start
