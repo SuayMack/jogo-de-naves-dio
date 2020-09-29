@@ -122,6 +122,7 @@ function start() {
     function disparo() {
         //podeAtirar
         if(podeAtirar == true){
+            somDisparo.play()
             podeAtirar = false
             //local onde vai sair o tiro do helicóptero
             //posicao top
@@ -178,6 +179,7 @@ function start() {
 
         //Se houver colisao do jogador com o inimigo1
         if(colisao1.length > 0) {
+            somExplosao.play()
             energiaAtual--
             //Capturo a posição atual do inimigo1
             inimigo1X = parseInt($("#inimigo1").css("left"))
@@ -247,6 +249,7 @@ function start() {
         //Se houver colisão jogador com amigo
         if (colisao5.length > 0) {
             salvos++
+            somResgate.play()
             reposicionaAmigo()
             $("#amigo").remove()
         }
@@ -265,6 +268,7 @@ function start() {
 
     //Inicio função Explosão1
     function explosao1(inimigo1X, inimigo1Y) {
+        somExplosao.play()
         //Cria uma div explosao
         $("#fundoGame").append("<div id= 'explosao1'></div>")
         //Imagem da div explosao
@@ -286,6 +290,7 @@ function start() {
 
     //Inicio função Explosão2
     function explosao2(inimigo2X, inimigo2Y) {
+        somExplosao.play()
         //Cria uma div explosao
         $("#fundoGame").append("<div id= 'explosao2'></div>")
         //Imagem da div explosao
@@ -307,6 +312,7 @@ function start() {
 
     //Inicio função Explosão3
     function explosao3(amigoX, amigoY) {
+        somPerdido.play()
         $("#fundoGame").append("<div id = 'explosao3' class = 'anima5'></div>")
         $("#explosao3").css("top", amigoY)
         $("#explosao3").css("left", amigoX)
