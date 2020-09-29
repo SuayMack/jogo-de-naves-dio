@@ -29,6 +29,13 @@ function start() {
     var salvos = 0 
     var perdidos = 0
     var energiaAtual = 3
+
+    var somDisparo = document.getElementById("somDisparo")
+    var somExplosao = document.getElementById("somExplosao")
+    var musica = document.getElementById("musica")
+    var somGameover = document.getElementById("somGameover")
+    var somPerdido = document.getElementById("somPerdido")
+    var somResgate = document.getElementById("somResgate")
     
     //Define se o jogador pressionou ou não alguma tecla
     jogo.pressionou = []
@@ -165,13 +172,7 @@ function start() {
         var colisao5 = ($("#jogador").collision($("#amigo")))
         var colisao6 = ($("#inimigo2").collision($("#amigo")))
         
-        var somDisparo = document.getElementById("somDisparo")
-        var somExplosao = document.getElementById("somExplosao")
-        var musica = document.getElementById("musica")
-        var somGameover = document.getElementById("somGameover")
-        var somPerdido = document.getElementById("somPerdido")
-        var somResgate = document.getElementById("somResgate")
-
+        
         //Música em loop
         //ended = fim da musica
         musica.addEventListener("ended", function () { musica.currentTime = 0; musica.play(); }, false)
@@ -212,6 +213,7 @@ function start() {
 
         //Se houver disparo do jogador com o inimigo1
         if(colisao3.length > 0) {
+            //aumento de velocidade
             velocidade = velocidade + 0.3
             pontos = pontos + 100
             //Capturo a posição atual do inimigo1
@@ -370,7 +372,36 @@ function start() {
         if (energiaAtual == 0) {
             $("#energia").css("background-image", "url(/resources/img/energia0.png)")
             //Game Over
+            gameOver()
         }
     }
 
+    //Inicio Função GameOver
+    function gameOver() {
+        fimdejogo = true
+        musica.pause()
+        somGameover.play()
+
+        //parar o gameLoop do jogo
+        window.clearInterval(jogo.timer)
+        jogo.timer = null
+
+        $("#jogador").remove()
+        $("#inimigo1").remove()
+        $("#inimigo2").remove()
+        $("#amigo").remove()
+    
+
+    $("#fundoGame").append("<div id = 'fim'></div>")
+
+    $("#fim").html("<h1> Game Over </h1><p>Sua pontuação foi: " + pontos + "</p>" + "<div id = 'reinicia' onClick = reiniciaJogo()><h3>Jogar Novamente</h3></div>")
+    //Fim Função GameOver
+    }
+
 }//Fim da função start
+
+function reiniciaJogo() {
+    somGameover.pause()
+    $("#fim").remove()
+    start()
+}
