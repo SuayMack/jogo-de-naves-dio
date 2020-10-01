@@ -10,6 +10,10 @@ Este projeto faz parte do Bootcamp: "JavaScript Game Developer".
 * Javascript
 * Jquery
 
+***********************
+Sound from Zapsplat.com
+***********************
+
 ## Telas do projeto:
 
 ![paginas_web](https://github.com/SuayMack/jogo-de-naves-dio/blob/master/resources/img/imagemGit.png) 
